@@ -7,7 +7,13 @@
 }
 
 .App{
-  padding-left: 5%;
-  padding-right: 5%;
+  /* padding-left: 5%;
+  padding-right: 5%; */
   font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+body{
+  background: rgb(250, 248, 248);
+  overflow-x: hidden;
 }
