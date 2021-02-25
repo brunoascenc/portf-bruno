@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 *{
   padding: 0;
@@ -10,10 +10,11 @@
   /* padding-left: 5%;
   padding-right: 5%; */
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
 }
 
 body{
   background: rgb(250, 248, 248);
   overflow-x: hidden;
 }
+
+

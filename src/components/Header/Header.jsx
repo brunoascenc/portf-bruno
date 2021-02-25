@@ -1,18 +1,28 @@
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
+import Particles from "react-particles-js";
 import styled from "styled-components";
 
 const NavHeader = styled.header`
+  position: relative;
   width: 100vw;
   height: 600px;
-  background: red;
+  background: #36325c;
+  color: #eee7e7;
   display: flex;
   flex-direction: column;
+
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 `;
 
 const Nav = styled.nav`
+  z-index: 100;
   width: 100%;
-  background: blue;
   height: 100px;
   display: flex;
   align-items: center;
@@ -20,18 +30,28 @@ const Nav = styled.nav`
   padding-left: 5%;
   padding-right: 5%;
 
+  > h1 {
+    font-weight: bold;
+    font-size: 2.2rem;
+    text-shadow: 2px 1px #96969b;
+  }
+
   > ul {
     list-style: none;
     display: flex;
+    align-items: center;
 
     li {
-      margin: 12px;
-      font-size: 1.3rem;
+      margin: 16px;
+      font-size: 1.2rem;
       font-weight: bold;
 
       a {
-        color: #1d1c1c;
+        cursor: pointer;
+        color: #eee7e7;
         text-decoration: none;
+        font-weight: 100;
+        letter-spacing: 1px;
       }
     }
   }
@@ -40,25 +60,75 @@ const Nav = styled.nav`
 const LandingText = styled.div`
   display: flex;
   align-items: center;
-  background: yellow;
   height: 100%;
   padding-left: 5%;
   padding-right: 5%;
 
-  >h1{
+  > p {
     line-height: 50px;
+    font-size: 2rem;
+  }
+
+  .bold {
+    font-weight: bold;
   }
 `;
 
 const Header = () => {
   return (
     <NavHeader>
+      <Particles
+        className="particles"
+        params={{
+          particles: {
+            number: {
+              value: 60,
+              density: {
+                enable: true,
+                value_area: 1500,
+              },
+            },
+            line_linked: {
+              enable: true,
+              opacity: 0.02,
+            },
+            move: {
+              direction: "right",
+              speed: 0.25,
+            },
+            size: {
+              value: 1,
+            },
+            opacity: {
+              anim: {
+                enable: true,
+                speed: 1,
+                opacity_min: 0.05,
+              },
+            },
+          },
+          interactivity: {
+            events: {
+              onclick: {
+                enable: true,
+                mode: "push",
+              },
+            },
+            modes: {
+              push: {
+                particles_nb: 1,
+              },
+            },
+          },
+          retina_detect: true,
+        }}
+      />
       <Nav>
         <h1>B</h1>
         <ul>
           <li>
             <a href="https://github.com/brunoascenc">
-              <AiFillGithub />
+              <AiFillGithub size={35} />
             </a>
           </li>
           <li>
@@ -73,10 +143,12 @@ const Header = () => {
         </ul>
       </Nav>
       <LandingText>
-        <h1>
-          Hi, <br /> i'm Bruno Ascenção
+        <p>
+          <span className="bold">Hi,</span> <br /> i'm{" "}
+          <span className="shadow">B</span>runo{" "}
+          <span className="shadow">A</span>scenção
           <br /> a Front-End Web Develper
-        </h1>
+        </p>
       </LandingText>
     </NavHeader>
   );

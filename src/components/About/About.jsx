@@ -7,7 +7,15 @@ const AboutSection = styled.section`
   align-items: center;
   margin-top: 80px;
 
+  > h1 {
+    color: #1a1818;
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;
+    border-bottom: solid 1px #524e4e;
+  }
+
   > p {
+    color: #474444;
     margin-top: 45px;
     text-align: center;
     width: 800px;
