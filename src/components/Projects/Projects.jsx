@@ -18,7 +18,7 @@ const ProjectsContainer = styled.section`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 300px;
+    height: 360px;
 
     &:first-child {
       background: #ece8e8;
@@ -33,10 +33,44 @@ const ProjectsContainer = styled.section`
 
     
     .project-detail{
-        align-self: center;
+        /* align-self: center; */
         display: flex;
         width: 100%;
+        align-items: center;
         justify-content: center;
+        flex-direction: column;
+
+        .movix{
+          color: rgb(158, 61, 238);
+          font-weight: bold;
+          letter-spacing: 1px;
+          /* border-bottom: solid 1px rgb(158, 61, 238); */
+        }
+
+        .hzone{
+          color: #f1324c;
+          font-weight: bold;
+        }
+
+        p{
+          width: 350px;
+          text-align: center;
+          margin-top: 20px;
+          color: #474444;
+          line-height: 25px;
+        }
+
+        a{
+          text-decoration: none;
+        }
+
+        .tecnologies{
+          margin-top: 25px;
+          font-weight: bold;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: #444041;
+        }
       }
 
     img{
@@ -51,14 +85,18 @@ const Projects = () => {
     <ProjectsContainer>
       <div>
         <div className="project-detail">
-        <h1>Movix</h1>
+        <h1 className="movix">Movix</h1>
+        <p>This is a website designed to search for films and stay on top of news. The data were taken from the <a href="https://developers.themoviedb.org/3">TMDB api</a>.</p>
+        <span className="tecnologies">ReactJS | SCSS | Redux</span>
         </div>
         <img src={Movix} alt="movix-wpp" />
       </div>
 
       <div>
         <div className="project-detail">
-          <h1>Hzone</h1>
+          <h1 className="hzone">Hzone</h1>
+          <p>E-commerce website with data extracted from a json file and used in components with ContextAPI.</p>
+          <span className="tecnologies">ReactJS | SCSS | ContextAPI</span>
         </div>
         <img src={Hzone} alt="hzone-wpp" />
       </div>

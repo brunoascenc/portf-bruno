@@ -5,7 +5,8 @@ const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 95px;
+  height: 45vh;
 
   > h1 {
     color: #1a1818;
