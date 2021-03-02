@@ -3,126 +3,117 @@ import Movix from "../../assets/movix-dktp.png";
 import Hzone from "../../assets/hzone-dktp.png";
 import styled from "styled-components";
 
+const Title = styled.h1`
+  font-weight: bold;
+`;
+
 const ProjectsContainer = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 100px;
-  /* height: 100vh; */
-
-  h1{
+  ${Title} {
     align-self: center;
     color: #1a1818;
-    /* text-transform: uppercase; */
     letter-spacing: 1px;
     border-bottom: solid 1px #524e4e;
+    margin-bottom: 50px;
   }
 
-  > div {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template: 'lol xd
-                          xd lol' */
-    display: flex;
-    /* justify-content: space-between; */
-    width: 100%;
-    /* height: 360px; */
-    height: 50vh;
-
-    .project-detail {
-      /* align-self: center; */
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-
-      flex-direction: column;
-
-      .movix {
-        color: rgb(158, 61, 238);
-        font-weight: bold;
-        letter-spacing: 1px;
-        /* border-bottom: solid 1px rgb(158, 61, 238); */
-      }
-
-      .hzone {
-        color: #f1324c;
-        font-weight: bold;
-      }
-
-      p {
-        width: 350px;
-        text-align: center;
-        margin-top: 20px;
-        color: #474444;
-        line-height: 25px;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      .tecnologies {
-        margin-top: 25px;
-        font-weight: bold;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #444041;
-      }
-    }
-
-    /* .img{ */
-      /* height: 100vh; */
-      /* padding: 105px; */
-      img{
-        max-width: 100%;
-        /* border-radius: 2px; */
-      }
-    /* } */
+  img {
+    max-width: 100%;
   }
+`;
 
-  .hzone-container {
-      background: #ece8e8;
-      /* margin-bottom: 100px; */
-    }
+const ProjectDetail = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
 
-    .movix-container {
-      flex-direction: row-reverse;
+const HzoneContainer = styled.div`
+  display: flex;
+  height: 50vh;
+  flex-direction: row-reverse;
+  background: #ece8e8;
+  ${ProjectDetail} {
+    ${Title} {
+      color: #f1324c;
     }
+  }
+`;
+
+const MovixContainer = styled(HzoneContainer)`
+  background: unset;
+  flex-direction: unset;
+  ${ProjectDetail} {
+    ${Title} {
+      color: rgb(158, 61, 238);
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+`;
+
+const Tecnologies = styled.span`
+  margin-top: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #444041;
+`;
+
+const ProjectText = styled.p`
+  width: 350px;
+  text-align: center;
+  margin-top: 20px;
+  color: #474444;
+  line-height: 25px;
 `;
 
 const Projects = () => {
   return (
     <ProjectsContainer>
-      {/* <h1>Projects</h1> */}
-      <div className="hzone-container">
-        <div className="project-detail">
-          <h1 className="hzone">Hzone</h1>
-          <p>
-            E-commerce website with data extracted from a json file and used in
-            components with ContextAPI.
-          </p>
-          <span className="tecnologies">ReactJS | SCSS | ContextAPI</span>
-        </div>
-        {/* <div className="img"> */}
-        <img src={Hzone} alt="hzone-wpp" />
-        {/* </div> */}
-
-      </div>
-
-      <div className="movix-container">
-        <div className="project-detail">
-          <h1 className="movix">Movix</h1>
-          <p>
+      <Title>Projects</Title>
+      <MovixContainer>
+        <ProjectDetail>
+          <Title>Movix</Title>
+          <ProjectText>
             This is a website designed to search for films and stay on top of
             news. The data were taken from the{" "}
             <a href="https://developers.themoviedb.org/3">TMDB api</a>.
-          </p>
-          <span className="tecnologies">ReactJS | SCSS | Redux</span>
-        </div>
-        {/* <div className="img"> */}
+          </ProjectText>
+          <Tecnologies>ReactJS | SCSS | Redux</Tecnologies>
+        </ProjectDetail>
         <img src={Movix} alt="movix-wpp" />
-        {/* </div> */}
-      </div>
+      </MovixContainer>
+
+      <HzoneContainer>
+        <ProjectDetail>
+          <Title>Hzone</Title>
+          <ProjectText>
+            E-commerce website with data extracted from a json file and used in
+            components with ContextAPI.
+          </ProjectText>
+          <Tecnologies>ReactJS | SCSS | ContextAPI</Tecnologies>
+        </ProjectDetail>
+        <img src={Hzone} alt="hzone-wpp" />
+      </HzoneContainer>
+
+      {/* <MovixContainer>
+        <ProjectDetail>
+          <Title>Movix</Title>
+          <ProjectText>
+            This is a website designed to search for films and stay on top of
+            news. The data were taken from the{" "}
+            <a href="https://developers.themoviedb.org/3">TMDB api</a>.
+          </ProjectText>
+          <Tecnologies>ReactJS | SCSS | Redux</Tecnologies>
+        </ProjectDetail>
+        <img src={Movix} alt="movix-wpp" />
+      </MovixContainer> */}
     </ProjectsContainer>
   );
 };

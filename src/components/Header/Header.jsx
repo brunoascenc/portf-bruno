@@ -20,6 +20,18 @@ const NavHeader = styled.header`
   }
 `;
 
+const Title = styled.h1`
+  font-weight: bold;
+  font-size: 2.2rem;
+  text-shadow: 2px 1px #96969b;
+`;
+
+const List = styled.ul`
+  list-style: none;
+  display: flex;
+  align-items: center;
+`;
+
 const Nav = styled.nav`
   z-index: 100;
   width: 100%;
@@ -30,17 +42,7 @@ const Nav = styled.nav`
   padding-left: 5%;
   padding-right: 5%;
 
-  > h1 {
-    font-weight: bold;
-    font-size: 2.2rem;
-    text-shadow: 2px 1px #96969b;
-  }
-
-  > ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-
+  ${List} {
     li {
       margin: 16px;
       font-size: 1.2rem;
@@ -68,10 +70,10 @@ const LandingText = styled.div`
     line-height: 50px;
     font-size: 2rem;
   }
+`;
 
-  .bold {
-    font-weight: bold;
-  }
+const BoldText = styled.span`
+  font-weight: bold;
 `;
 
 const Header = () => {
@@ -124,8 +126,8 @@ const Header = () => {
         }}
       />
       <Nav>
-        <h1>B</h1>
-        <ul>
+        <Title>B</Title>
+        <List>
           <li>
             <a href="https://github.com/brunoascenc">
               <AiFillGithub size={35} />
@@ -140,13 +142,12 @@ const Header = () => {
           <li>
             <a href="https://github.com/brunoascenc">Contact</a>
           </li>
-        </ul>
+        </List>
       </Nav>
       <LandingText>
         <p>
-          <span className="bold">Hi,</span> <br /> i'm{" "}
-          <span className="shadow">B</span>runo{" "}
-          <span className="shadow">A</span>scenção
+          <BoldText>Hi,</BoldText> <br /> i'm <span className="shadow">B</span>
+          runo <span className="shadow">A</span>scenção
           <br /> a Front-End Web Develper
         </p>
       </LandingText>

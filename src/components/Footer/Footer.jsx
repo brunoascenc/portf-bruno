@@ -3,12 +3,19 @@ import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { GrMail } from "react-icons/gr";
 import styled from "styled-components";
 
+const FooterTitle = styled.h2`
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+`;
+
 const FooterContainer = styled.footer`
   background: #2c2638;
   color: #d6d3db;
   height: 300px;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
 `;
 
@@ -17,16 +24,8 @@ const ContactInfo = styled.div`
   flex-direction: column;
   padding-left: 5%;
   padding-right: 5%;
-  h2 {
-    text-transform: uppercase;
-    margin-bottom: 10px;
+  .name {
     font-size: 1.5rem;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-  }
-
-  .name{
-      font-size: 1.5rem;
   }
 
   p {
@@ -37,29 +36,25 @@ const ContactInfo = styled.div`
 
   div {
     display: flex;
-    /* align-items: center; */
-    /* margin-bottom: 5px; */
     font-size: 1.3rem;
 
-    p{
-        margin-left: 5px;
+    p {
+      margin-left: 5px;
     }
   }
 `;
 
-const Copy = styled.div `
-p{
+const Copy = styled.div`
+  p {
     font-size: 1.5rem;
-}
-
-
-`
+  }
+`;
 
 const Footer = () => {
   return (
     <FooterContainer>
       <ContactInfo>
-        <h2>Contact</h2>
+        <FooterTitle>Contact</FooterTitle>
         <p>
           <span className="name">Bruno Ascenção</span> <br /> São Paulo, SP
         </p>
@@ -72,8 +67,10 @@ const Footer = () => {
         </div>
       </ContactInfo>
       <Copy>
-          <p><AiFillGithub/> Website repository</p>
-          <span>© copyright 2021 Bruno Ascenção</span>
+        <p>
+          <AiFillGithub /> Website repository
+        </p>
+        <span>© copyright 2021 Bruno Ascenção</span>
       </Copy>
     </FooterContainer>
   );
