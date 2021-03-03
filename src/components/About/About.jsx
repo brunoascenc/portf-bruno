@@ -4,26 +4,35 @@ import styled from "styled-components";
 const AboutSection = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 95px;
-  height: 45vh;
+  height: 60vh;
 `;
 
 const Title = styled.h1`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #494646;
   letter-spacing: 1px;
-  border-bottom: solid 1px #524e4e;
   font-weight: 100;
-  font-size: 2rem;
+  font-size: 2.3rem;
+  &::after{
+    content: "";
+    background: #666060;
+    width: 50px;
+    height: 1px;
+    margin-top: 7px;
+  }
 `;
 
 const AboutTxt = styled.p`
-  color: #474444;
+  color: #2b2828;
   margin-top: 45px;
   text-align: center;
   width: 800px;
   line-height: 35px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   letter-spacing: 1px;
 `;
 

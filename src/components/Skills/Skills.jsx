@@ -1,26 +1,49 @@
 import React from "react";
-import { AiFillHtml5, AiFillGithub } from "react-icons/ai";
+import { AiFillHtml5 } from "react-icons/ai";
 import { IoLogoCss3, IoLogoJavascript, IoLogoSass } from "react-icons/io";
 import { GrReactjs } from "react-icons/gr";
 import { BsFillBootstrapFill } from "react-icons/bs";
 import { FiFigma } from "react-icons/fi";
+import { FaGit } from "react-icons/fa";
+import Particles from "react-particles-js";
 import styled from "styled-components";
 
 const Title = styled.h1`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #494646;
   letter-spacing: 1px;
-  border-bottom: solid 1px #524e4e;
   font-weight: 100;
-  font-size: 2rem;
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+  margin-top: 65px;
+  &::after {
+    content: "";
+    background: #666060;
+    width: 50px;
+    height: 1px;
+    margin-top: 7px;
+  }
 `;
 
 const SkillSection = styled.section`
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #ece8e8;
+  background: #36325c;
+  position: relative;
+
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const SkillsIcons = styled.div`
@@ -29,7 +52,7 @@ const SkillsIcons = styled.div`
   align-items: center;
   grid-row-gap: 40px;
   grid-column-gap: 40px;
-  margin-top: 50px;
+  z-index: 100;
 
   div {
     display: flex;
@@ -38,56 +61,105 @@ const SkillsIcons = styled.div`
     background: #f7f3f3;
     border-radius: 8px;
     padding: 25px 50px 25px 50px;
-    box-shadow: -1px 5px 10px 1px rgba(71, 69, 69, 0.2);
+    box-shadow: -1px 5px 10px 2px rgba(34, 33, 33, 0.2);
 
-    p{
-        margin-top: 20px;
-        color: #353232;
+    p {
+      margin-top: 20px;
+      color: #353232;
     }
   }
 `;
 
 const Skills = () => {
   return (
-    <SkillSection>
+    <>
       <Title>Skills</Title>
-      <SkillsIcons>
-        <div>
-          <AiFillHtml5 color="#302c2c" size={100} />
-          <p>Html5</p>
-        </div>
-        <div>
-          <IoLogoCss3 size={100} />
-          <p>Css3</p>
-        </div>
-        <div>
-          <IoLogoJavascript size={100} />
-          <p>JavaScript</p>
-        </div>
-        <div>
-          <GrReactjs size={100} />
-          <p>ReactJS</p>
-        </div>
-        <div>
-          <BsFillBootstrapFill size={100} />
-          <p>Bootstrap</p>
-        </div>
-        <div>
-          <IoLogoSass size={100} />
-          <p>Sass</p>
-        </div>
+      <SkillSection>
+        {/* <Title>Skills</Title> */}
+        <Particles
+          className="particles"
+          params={{
+            particles: {
+              number: {
+                value: 60,
+                density: {
+                  enable: true,
+                  value_area: 1500,
+                },
+              },
+              line_linked: {
+                enable: true,
+                opacity: 0.02,
+              },
+              move: {
+                direction: "right",
+                speed: 0.25,
+              },
+              size: {
+                value: 1,
+              },
+              opacity: {
+                anim: {
+                  enable: true,
+                  speed: 1,
+                  opacity_min: 0.05,
+                },
+              },
+            },
+            interactivity: {
+              events: {
+                onclick: {
+                  enable: true,
+                  mode: "push",
+                },
+              },
+              modes: {
+                push: {
+                  particles_nb: 1,
+                },
+              },
+            },
+            retina_detect: true,
+          }}
+        />
+        <SkillsIcons>
+          <div>
+            <AiFillHtml5 color="#f06529" size={100} />
+            <p>Html5</p>
+          </div>
+          <div>
+            <IoLogoCss3 color="#2965f1" size={100} />
+            <p>Css3</p>
+          </div>
+          <div>
+            <IoLogoJavascript color="#323330" size={100} />
+            <p>JavaScript</p>
+          </div>
+          <div>
+            <GrReactjs color="#61DBFB" size={100} />
+            <p>ReactJS</p>
+          </div>
+          <div>
+            <BsFillBootstrapFill color="#080135" size={100} />
+            <p>Bootstrap</p>
+          </div>
+          <div>
+            <IoLogoSass color="#c69" size={100} />
+            <p>Sass</p>
+          </div>
 
-        <div>
-          <AiFillGithub size={100} />
-          <p>Git</p>
-        </div>
+          <div>
+            <FaGit color="#f34f29" size={100} />
+            <p>Git</p>
+          </div>
 
-        <div>
-          <FiFigma size={100} />
-          <p>Figma</p>
-        </div>
-      </SkillsIcons>
-    </SkillSection>
+          <div>
+            <FiFigma color="#7043A8" size={100} />
+            <p>Figma</p>
+          </div>
+        </SkillsIcons>
+      </SkillSection>
+    </>
   );
 };
 
