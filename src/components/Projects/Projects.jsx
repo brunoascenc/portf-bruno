@@ -29,12 +29,20 @@ const ProjectLinks = styled.div`
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
-  position: absolute;
-  bottom: 20px;
+  a {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    color: #1a1818;
+
+    p {
+      margin-left: 5px;
+      border-bottom: dotted 1px #1a1818;
+    }
+  }
 `;
 
 const ImgContainer = styled.div`
-  position: relative;
   width: 600px;
   padding: 5px 5px 10px 5px;
   border-radius: 3px;
@@ -66,31 +74,30 @@ const HzoneContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   height: 50vh;
-  flex-direction: row-reverse;
   margin-bottom: 100px;
-  /* background: #ece8e8; */
   ${ProjectDetail} {
     h2 {
       color: #f1324c;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
   }
 
   ${ImgContainer} {
-    /* background: #f1324c; */
+    padding: 25px;
     a {
       color: black;
     }
   }
 
   img {
-    /* border: solid 1px #ac293a; */
-    box-shadow: -1px 5px 10px 2px rgba(34, 33, 33, 0.2);
+    box-shadow: 20px 20px #f53a53;
   }
 `;
 
 const MovixContainer = styled(HzoneContainer)`
   background: unset;
-  flex-direction: unset;
+  flex-direction: row-reverse;
   ${ProjectDetail} {
     h2 {
       color: rgb(158, 61, 238);
@@ -101,15 +108,13 @@ const MovixContainer = styled(HzoneContainer)`
   }
 
   ${ImgContainer} {
-    /* background: #0a0a0e; */
     a {
       color: rgb(158, 61, 238);
     }
   }
 
   img {
-    /* border: solid 1px #0a0a0e; */
-    box-shadow: -1px 5px 10px 2px rgba(34, 33, 33, 0.2);
+    box-shadow: -20px 20px rgb(158, 61, 238);
   }
 `;
 
@@ -143,17 +148,17 @@ const Projects = () => {
             <a href="https://developers.themoviedb.org/3">TMDB api</a>.
           </ProjectText>
           <Tecnologies>ReactJS | SCSS | Redux</Tecnologies>
+          <ProjectLinks>
+            <a href="https://github.com/brunoascenc/movix-react/tree/master/movix">
+              <AiFillGithub size={20} /> <p>Code</p>
+            </a>
+            <a href="https://movixapp.netlify.app/">
+              <BiWorld size={20} /> <p>Website</p>
+            </a>
+          </ProjectLinks>
         </ProjectDetail>
         <ImgContainer>
           <img src={Movix} alt="movix-wpp" />
-          {/* <ProjectLinks>
-            <a href="https://github.com/brunoascenc/movix-react/tree/master/movix">
-              <AiFillGithub size={40} />
-            </a>
-            <a href="https://movixapp.netlify.app/">
-              <BiWorld size={40} />
-            </a>
-          </ProjectLinks> */}
         </ImgContainer>
       </MovixContainer>
 
@@ -165,17 +170,17 @@ const Projects = () => {
             components with ContextAPI.
           </ProjectText>
           <Tecnologies>ReactJS | SCSS | ContextAPI</Tecnologies>
+          <ProjectLinks>
+            <a href="https://github.com/brunoascenc/hzone">
+              <AiFillGithub size={20} /> <p>Code</p>
+            </a>
+            <a href="https://hzone.netlify.com/">
+              <BiWorld size={20} /> <p>Website</p>
+            </a>
+          </ProjectLinks>
         </ProjectDetail>
         <ImgContainer>
           <img src={Hzone} alt="hzone-wpp" />
-          {/* <ProjectLinks>
-            <a href="https://github.com/brunoascenc/hzone">
-              <AiFillGithub size={40} />
-            </a>
-            <a href="https://hzone.netlify.com/">
-              <BiWorld size={40} />
-            </a>
-          </ProjectLinks> */}
         </ImgContainer>
       </HzoneContainer>
     </ProjectsContainer>

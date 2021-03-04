@@ -6,7 +6,7 @@ import styled from "styled-components";
 const FooterTitle = styled.h2`
   text-transform: uppercase;
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 20px;
   letter-spacing: 1px;
   color: #eee2e2;

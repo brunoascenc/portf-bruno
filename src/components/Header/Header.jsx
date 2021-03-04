@@ -22,7 +22,7 @@ const NavHeader = styled.header`
 
 const Title = styled.h1`
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2.9rem;
   text-shadow: 2px 1px #96969b;
 `;
 
@@ -52,7 +52,7 @@ const Nav = styled.nav`
         cursor: pointer;
         color: #eee7e7;
         text-decoration: none;
-        font-weight: 100;
+        font-weight: 300;
         letter-spacing: 1px;
       }
     }
@@ -63,17 +63,18 @@ const LandingText = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  padding-left: 5%;
+  padding-left: 10%;
   padding-right: 5%;
 
   > p {
-    line-height: 50px;
-    font-size: 2rem;
+    line-height: 60px;
+    font-size: 2.3rem;
   }
 `;
 
 const BoldText = styled.span`
   font-weight: bold;
+  font-size: 3.5rem;
 `;
 
 const Header = () => {
@@ -146,7 +147,7 @@ const Header = () => {
       </Nav>
       <LandingText>
         <p>
-          <BoldText>Hi,</BoldText> <br /> i'm <span className="shadow">B</span>
+          <BoldText>Hi,</BoldText> <br /> I'm <span className="shadow">B</span>
           runo <span className="shadow">A</span>scenção
           <br /> a Front-End Web Develper
         </p>
