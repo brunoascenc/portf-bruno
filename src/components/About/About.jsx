@@ -6,7 +6,7 @@ const AboutSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 485px;
 `;
 
 const Title = styled.h1`
@@ -34,11 +34,24 @@ const AboutTxt = styled.p`
   line-height: 35px;
   font-size: 1.2rem;
   letter-spacing: 1px;
+  @media (max-width: 980px){
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  @media (max-width: 520px){
+    font-size: 1rem;
+  }
+
+  @media (max-width: 420px){
+    line-height: 30px;
+  }
 `;
 
 const About = () => {
   return (
-    <AboutSection>
+    <AboutSection id="about">
       <Title>About</Title>
       <AboutTxt>
         Front-end developer with solid knowledge in HTML5, CSS3, JavaScript and

@@ -17,7 +17,8 @@ const Title = styled.h1`
   font-weight: 100;
   font-size: 2.3rem;
   margin-bottom: 25px;
-  margin-top: 65px;
+  margin-top: 85px;
+  scroll-margin-top: 45px;
   &::after {
     content: "";
     background: #666060;
@@ -28,14 +29,18 @@ const Title = styled.h1`
 `;
 
 const SkillSection = styled.section`
-  height: 80vh;
+  height: 620px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #ece8e8;
   background: #36325c;
   position: relative;
+
+  @media (max-width: 995px){
+    height: 100%;
+    padding: 75px 0 75px 0;
+  }
 
   .particles {
     position: absolute;
@@ -48,11 +53,21 @@ const SkillSection = styled.section`
 
 const SkillsIcons = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   align-items: center;
   grid-row-gap: 40px;
   grid-column-gap: 40px;
   z-index: 100;
+  @media (min-width: 995px){
+  width: 920px;
+  margin: 0 auto;
+  }
+
+  @media (max-width: 995px){
+    width: 100%;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
 
   div {
     display: flex;
@@ -73,7 +88,7 @@ const SkillsIcons = styled.div`
 const Skills = () => {
   return (
     <>
-      <Title>Skills</Title>
+      <Title id="skills">Skills</Title>
       <SkillSection>
         {/* <Title>Skills</Title> */}
         <Particles

@@ -57,6 +57,15 @@ const ProjectsContainer = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  @media (min-width: 1860px) {
+    width: 1485px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1040px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
   ${Title} {
     margin-bottom: 65px;
   }
@@ -73,9 +82,14 @@ const HzoneContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 50vh;
   margin-bottom: 100px;
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+  }
+
   ${ProjectDetail} {
+    margin-top: 35px;
     h2 {
       color: #f1324c;
       text-transform: uppercase;
@@ -85,6 +99,13 @@ const HzoneContainer = styled.div`
 
   ${ImgContainer} {
     padding: 25px;
+    @media (max-width: 950px) {
+      order: -1;
+      width: 100%;
+    }
+    @media (max-width: 500px) {
+      padding: 10px;
+    }
     a {
       color: black;
     }
@@ -92,12 +113,19 @@ const HzoneContainer = styled.div`
 
   img {
     box-shadow: 20px 20px #f53a53;
+    @media (max-width: 500px) {
+      box-shadow: 10px 10px #f53a53;
+    }
   }
 `;
 
 const MovixContainer = styled(HzoneContainer)`
   background: unset;
   flex-direction: row-reverse;
+  @media (max-width: 950px) {
+    flex-direction: column;
+  }
+
   ${ProjectDetail} {
     h2 {
       color: rgb(158, 61, 238);
@@ -115,6 +143,12 @@ const MovixContainer = styled(HzoneContainer)`
 
   img {
     box-shadow: -20px 20px rgb(158, 61, 238);
+    @media (max-width: 950px) {
+      box-shadow: 20px 20px rgb(158, 61, 238);
+    }
+    @media (max-width: 500px) {
+      box-shadow: 10px 10px rgb(158, 61, 238);
+    }
   }
 `;
 
@@ -133,11 +167,19 @@ const ProjectText = styled.p`
   color: #474444;
   line-height: 30px;
   font-size: 1.2rem;
+  @media (max-width: 530px) {
+    width: 60%;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 520px) {
+    width: 100%;
+  }
 `;
 
 const Projects = () => {
   return (
-    <ProjectsContainer>
+    <ProjectsContainer id="projects">
       <Title>Projects</Title>
       <MovixContainer>
         <ProjectDetail>

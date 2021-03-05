@@ -16,13 +16,26 @@ const FooterContainer = styled.footer`
   position: relative;
   background: #36325c;
   color: #c7bfd4;
-  height: 45vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding-top: 65px;
+  padding-bottom: 65px;
   margin-top: 2rem;
   padding-left: 5%;
   padding-right: 5%;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    @media (min-width: 1860px) {
+      width: 1860px;
+      margin: 0 auto;
+    }
+    @media (max-width: 735px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
 `;
 
 const ContactInfo = styled.div`
@@ -40,6 +53,7 @@ const ContactInfo = styled.div`
 
   div {
     display: flex;
+    align-items: center;
     font-size: 1.3rem;
     margin: 10px;
     margin-left: 0;
@@ -47,6 +61,9 @@ const ContactInfo = styled.div`
     a {
       margin-left: 5px;
       color: #c7bfd4;
+      @media (max-width: 430px) {
+        font-size: 1rem;
+      }
     }
   }
 `;
@@ -55,6 +72,10 @@ const Copy = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 735px) {
+    margin-top: 45px;
+  }
+
   div {
     display: flex;
     align-items: center;
@@ -87,29 +108,37 @@ const BuiltBy = styled.span`
 
 const Footer = () => {
   return (
-    <FooterContainer>
-      <ContactInfo>
-        <FooterTitle>Contact Info</FooterTitle>
-        <p>
-          <span className="name">Bruno Ascenção</span> <br /> São Paulo, SP
-        </p>
-        <div>
-          <GrMail size={25} /> <a href = "mailto: brunoascencao1@outlook.com">brunoascencao1@outlook.com</a>
-        </div>
+    <FooterContainer id="contact">
+      <div className="wrapper">
+        <ContactInfo>
+          <FooterTitle>Contact Info</FooterTitle>
+          <p>
+            <span className="name">Bruno Ascenção</span> <br /> São Paulo, SP
+          </p>
+          <div>
+            <GrMail size={25} />{" "}
+            <a href="mailto: brunoascencao1@outlook.com">
+              brunoascencao1@outlook.com
+            </a>
+          </div>
 
-        <div>
-          <AiFillLinkedin size={25} /> <a href="https://www.linkedin.com/in/bruno-ascen%C3%A7%C3%A3o-5bb27b16a/">Linkedin</a>
-        </div>
-      </ContactInfo>
-      <Copy>
-        <div>
-          <AiFillGithub size={45} /> <p>Website repository</p>
-        </div>
-        <span>© copyright 2021 Bruno Ascenção</span>
-      </Copy>
-      <BuiltBy>
-        Built by <a href="https://github.com/brunoascenc">Bruno Ascenção</a>
-      </BuiltBy>
+          <div>
+            <AiFillLinkedin size={25} />{" "}
+            <a href="https://www.linkedin.com/in/bruno-ascen%C3%A7%C3%A3o-5bb27b16a/">
+              Linkedin
+            </a>
+          </div>
+        </ContactInfo>
+        <Copy>
+          <div>
+            <AiFillGithub size={45} /> <p>Website repository</p>
+          </div>
+          <span>© copyright 2021 Bruno Ascenção</span>
+        </Copy>
+        <BuiltBy>
+          Built by <a href="https://github.com/brunoascenc">Bruno Ascenção</a>
+        </BuiltBy>
+      </div>
     </FooterContainer>
   );
 };

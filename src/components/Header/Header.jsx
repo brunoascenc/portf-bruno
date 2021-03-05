@@ -1,11 +1,22 @@
 import React from "react";
-import { AiFillGithub } from "react-icons/ai";
+import Burger from "./Burger";
 import Particles from "react-particles-js";
 import styled from "styled-components";
 
 const NavHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  @media (min-width: 1860px) {
+    width: 1860px;
+    margin: 0 auto;
+  }
+`;
+
+const HeaderContainer = styled.div`
   position: relative;
-  width: 100vw;
   height: 625px;
   background: #36325c;
   color: #eee7e7;
@@ -26,125 +37,93 @@ const Title = styled.h1`
   text-shadow: 2px 1px #96969b;
 `;
 
-const List = styled.ul`
-  list-style: none;
-  display: flex;
-  align-items: center;
-`;
-
-const Nav = styled.nav`
-  z-index: 100;
-  width: 100%;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 5%;
-  padding-right: 5%;
-
-  ${List} {
-    li {
-      margin: 16px;
-      font-size: 1.2rem;
-      font-weight: bold;
-
-      a {
-        cursor: pointer;
-        color: #eee7e7;
-        text-decoration: none;
-        font-weight: 300;
-        letter-spacing: 1px;
-      }
-    }
-  }
-`;
-
 const LandingText = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  padding-left: 10%;
+  padding-left: 5%;
   padding-right: 5%;
+  @media (min-width: 1860px) {
+    width: 1860px;
+    margin: 0 auto;
+  }
 
-  > p {
+  p {
     line-height: 60px;
     font-size: 2.3rem;
+    @media (max-width: 485px) {
+      font-size: 1.7rem;
+      line-height: 50px;
+    }
+
+    @media (max-width: 320px) {
+      font-size: 1.4rem;
+    }
   }
 `;
 
 const BoldText = styled.span`
   font-weight: bold;
   font-size: 3.5rem;
+
+  @media (max-width: 485px) {
+    font-size: 2.6rem;
+  }
 `;
 
 const Header = () => {
   return (
-    <NavHeader>
-      <Particles
-        className="particles"
-        params={{
-          particles: {
-            number: {
-              value: 60,
-              density: {
-                enable: true,
-                value_area: 1500,
-              },
-            },
-            line_linked: {
-              enable: true,
-              opacity: 0.02,
-            },
-            move: {
-              direction: "right",
-              speed: 0.25,
-            },
-            size: {
-              value: 1,
-            },
-            opacity: {
-              anim: {
-                enable: true,
-                speed: 1,
-                opacity_min: 0.05,
-              },
-            },
-          },
-          interactivity: {
-            events: {
-              onclick: {
-                enable: true,
-                mode: "push",
-              },
-            },
-            modes: {
-              push: {
-                particles_nb: 1,
-              },
-            },
-          },
-          retina_detect: true,
-        }}
-      />
-      <Nav>
+    <HeaderContainer>
+      <NavHeader>
         <Title>B</Title>
-        <List>
-          <li>
-            <a href="https://github.com/brunoascenc">
-              <AiFillGithub size={35} />
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/brunoascenc">About</a>
-          </li>
-          <li>
-            <a href="https://github.com/brunoascenc">Projects</a>
-          </li>
-          <li>
-            <a href="https://github.com/brunoascenc">Contact</a>
-          </li>
-        </List>
-      </Nav>
+        <Particles
+          className="particles"
+          params={{
+            particles: {
+              number: {
+                value: 60,
+                density: {
+                  enable: true,
+                  value_area: 1500,
+                },
+              },
+              line_linked: {
+                enable: true,
+                opacity: 0.02,
+              },
+              move: {
+                direction: "right",
+                speed: 0.25,
+              },
+              size: {
+                value: 1,
+              },
+              opacity: {
+                anim: {
+                  enable: true,
+                  speed: 1,
+                  opacity_min: 0.05,
+                },
+              },
+            },
+            interactivity: {
+              events: {
+                onclick: {
+                  enable: true,
+                  mode: "push",
+                },
+              },
+              modes: {
+                push: {
+                  particles_nb: 1,
+                },
+              },
+            },
+            retina_detect: true,
+          }}
+        />
+        <Burger />
+      </NavHeader>
       <LandingText>
         <p>
           <BoldText>Hi,</BoldText> <br /> I'm <span className="shadow">B</span>
@@ -152,7 +131,7 @@ const Header = () => {
           <br /> a Front-End Web Develper
         </p>
       </LandingText>
-    </NavHeader>
+    </HeaderContainer>
   );
 };
 
